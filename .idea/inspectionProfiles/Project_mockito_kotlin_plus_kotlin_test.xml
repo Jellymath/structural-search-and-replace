@@ -1,9 +1,6 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
-    <option name="myName" value="Project Default" />
-    <inspection_tool class="1fd1da7b-d1fe-384a-84d4-3dab70390edc" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="643c9e8a-d6f2-3790-af46-a7c297b8c564" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="74f65f63-f0b8-3940-9c96-bffdf8a260a5" enabled="true" level="WARNING" enabled_by_default="true" />
+    <option name="myName" value="Project mockito-kotlin plus kotlin.test" />
     <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <replaceConfiguration name="Convert JUnit5 assertEquals to kotlin.test one" problemDescriptor="Use assertEquals from kotlin.test" text="Assertions.assertEquals($Expected$, $Actual$)" recursive="false" caseInsensitive="false" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="true" replacement="kotlin.test.assertEquals($Expected$, $Actual$)">
         <constraint name="__context__" within="" contains="" />
@@ -37,8 +34,5 @@
         <constraint name="Value" within="" contains="" />
       </replaceConfiguration>
     </inspection_tool>
-    <inspection_tool class="d104c2eb-9c2d-3576-849b-f8f4b26f4eda" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="d8cda8e9-c974-3f28-8841-6eadea33b073" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="f446c855-7c76-3f21-b92e-758633c03d3e" enabled="true" level="WARNING" enabled_by_default="true" />
   </profile>
 </component>
