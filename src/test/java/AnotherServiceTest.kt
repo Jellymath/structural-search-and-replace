@@ -16,15 +16,15 @@ class AnotherServiceTest {
     private lateinit var someService: SomeService
     @Test
     fun testThrowsOnNonCalculateParameter() {
-        val exception = Assertions.assertThrows(DomainException::class.java) { service!!.bar(false) }
+        val exception = Assertions.assertThrows(DomainException::class.java) { service.bar(false) }
         Assertions.assertEquals("Unexpected stuff happened", exception.message)
     }
 
     @Test
     @Throws(DomainException::class)
     fun testSomeServiceResultUsed() {
-        Mockito.`when`(someService!!.foo()).thenReturn(42)
-        val result = service!!.bar(true)
+        Mockito.`when`(someService.foo()).thenReturn(42)
+        val result = service.bar(true)
         Assertions.assertEquals("Some service returned 42", result)
     }
 }
