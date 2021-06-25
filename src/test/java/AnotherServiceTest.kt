@@ -4,7 +4,6 @@ import org.mockito.junit.jupiter.MockitoExtension
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.junit.jupiter.api.Test
-import kotlin.Throws
 import org.mockito.Mockito.*
 
 @ExtendWith(MockitoExtension::class)
@@ -22,7 +21,6 @@ class AnotherServiceTest {
     }
 
     @Test
-    @Throws(DomainException::class)
     fun testSomeServiceResultUsed() {
         `when`(someService.foo()).thenReturn(42)
         val result = service.bar(true)
