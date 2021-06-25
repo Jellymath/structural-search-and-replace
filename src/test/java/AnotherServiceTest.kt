@@ -1,30 +1,30 @@
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.extension.ExtendWith
+import org.mockito.junit.jupiter.MockitoExtension
+import org.mockito.InjectMocks
+import org.mockito.Mock
+import org.junit.jupiter.api.Test
+import kotlin.Throws
+import org.mockito.Mockito
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
-
-@ExtendWith(MockitoExtension.class)
-public class AnotherServiceTest {
+@ExtendWith(MockitoExtension::class)
+class AnotherServiceTest {
     @InjectMocks
-    private AnotherService service;
+    private val service: AnotherService? = null
 
     @Mock
-    private SomeService someService;
-
+    private val someService: SomeService? = null
     @Test
-    public void testThrowsOnNonCalculateParameter() {
-        final var exception = assertThrows(DomainException.class, () -> service.bar(false));
-        assertEquals("Unexpected stuff happened", exception.getMessage());
+    fun testThrowsOnNonCalculateParameter() {
+        val exception = Assertions.assertThrows(DomainException::class.java) { service!!.bar(false) }
+        Assertions.assertEquals("Unexpected stuff happened", exception.message)
     }
 
     @Test
-    public void testSomeServiceResultUsed() throws DomainException {
-        when(someService.foo()).thenReturn(42);
-        final var result = service.bar(true);
-        assertEquals("Some service returned 42", result);
+    @Throws(DomainException::class)
+    fun testSomeServiceResultUsed() {
+        Mockito.`when`(someService!!.foo()).thenReturn(42)
+        val result = service!!.bar(true)
+        Assertions.assertEquals("Some service returned 42", result)
     }
 }
