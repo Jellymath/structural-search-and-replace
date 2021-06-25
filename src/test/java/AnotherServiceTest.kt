@@ -1,10 +1,12 @@
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.junit.jupiter.MockitoExtension
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.junit.jupiter.api.Test
-import org.mockito.Mockito.*
+import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.whenever
+import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 
 @ExtendWith(MockitoExtension::class)
 class AnotherServiceTest {
@@ -16,13 +18,13 @@ class AnotherServiceTest {
 
     @Test
     fun testThrowsOnNonCalculateParameter() {
-        val exception = assertThrows(DomainException::class.java) { service.bar(false) }
+        val exception = assertFailsWith<DomainException> { service.bar(false) }
         assertEquals("Unexpected stuff happened", exception.message)
     }
 
     @Test
     fun testSomeServiceResultUsed() {
-        `when`(someService.foo()).thenReturn(42)
+        whenever(someService.foo()) doReturn 42
         val result = service.bar(true)
         assertEquals("Some service returned 42", result)
     }
