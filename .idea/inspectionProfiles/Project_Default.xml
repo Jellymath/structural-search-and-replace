@@ -1,0 +1,44 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="1fd1da7b-d1fe-384a-84d4-3dab70390edc" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="643c9e8a-d6f2-3790-af46-a7c297b8c564" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="74f65f63-f0b8-3940-9c96-bffdf8a260a5" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <replaceConfiguration name="Convert JUnit5 assertEquals to kotlin.test one" problemDescriptor="Use assertEquals from kotlin.test" text="Assertions.assertEquals($Expected$, $Actual$)" recursive="false" caseInsensitive="false" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="true" replacement="kotlin.test.assertEquals($Expected$, $Actual$)">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="Expected" within="" contains="" />
+        <constraint name="Actual" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Convert junit5 Java's assertThrows to kotlin.test assertFailsWith" problemDescriptor="Use assertFailsWith from kotlin.test" text="Assertions.assertThrows($Exception$::class.java) { $block$ }" recursive="false" caseInsensitive="false" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="true" replacement="kotlin.test.assertFailsWith&lt;$Exception$&gt; { $block$ }">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="Exception" within="" contains="" />
+        <constraint name="block" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Convert Mock/InjectMocks variables to lateinit var" problemDescriptor="Use lateinit var for these properties" text="@$AnnotationForLateInit$&#10;private val $Name$: $Type$? = $Init$&#10;" recursive="false" caseInsensitive="false" type="Kotlin" pattern_context="default" search_injected="false" reformatAccordingToStyle="true" shortenFQN="false" replacement="@$AnnotationForLateInit$&#10;private lateinit var $Name$: $Type$&#10;">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="Init" nameOfExprType="Nothing\?" within="" contains="" />
+        <constraint name="AnnotationForLateInit" regexp="Mock|InjectMocks" within="" contains="" />
+        <constraint name="Type" within="" contains="" />
+        <constraint name="Name" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Convert Mockito's when to whenever" problemDescriptor="Use whenever from Mockito Kotlin" text="Mockito.`when`($call$)" recursive="false" caseInsensitive="false" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="true" replacement="org.mockito.kotlin.whenever($call$)">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="call" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Remove Throws annotation from test cases" problemDescriptor="Remove Throws annotation from this test case" text="@Test&#10;@kotlin.Throws&#10;fun $name$() {&#10;    $something$&#10;}" recursive="false" caseInsensitive="false" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="false" replacement="@Test&#10;fun $name$() {&#10;    $something$&#10;}">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="name" within="" contains="" />
+        <constraint name="something" minCount="0" maxCount="2147483647" within="" contains="" />
+      </replaceConfiguration>
+      <replaceConfiguration name="Replace thenReturn from Mockito to doReturn" uuid="74f65f63-f0b8-3940-9c96-bffdf8a260a5" problemDescriptor="Replace with doReturn (note: import is required)" text="$Stubbing$.thenReturn($Value$)" recursive="false" caseInsensitive="false" type="Kotlin" pattern_context="default" reformatAccordingToStyle="true" shortenFQN="false" replacement="$Stubbing$ doReturn $Value$">
+        <constraint name="__context__" within="" contains="" />
+        <constraint name="Stubbing" nameOfExprType="OngoingStubbing" within="" contains="" />
+        <constraint name="Value" within="" contains="" />
+      </replaceConfiguration>
+    </inspection_tool>
+    <inspection_tool class="d104c2eb-9c2d-3576-849b-f8f4b26f4eda" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="d8cda8e9-c974-3f28-8841-6eadea33b073" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="f446c855-7c76-3f21-b92e-758633c03d3e" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>
