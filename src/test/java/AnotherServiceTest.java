@@ -22,9 +22,9 @@ public class AnotherServiceTest {
     }
 
     @Test
-    public void testSomeServiceResultUsed() {
+    public void testSomeServiceResultUsed() throws DomainException {
         when(someService.foo()).thenReturn(42);
-        final var result = assertDoesNotThrow(() -> service.bar(true));
+        final var result = service.bar(true);
         assertEquals("Some service returned 42", result);
     }
 }
