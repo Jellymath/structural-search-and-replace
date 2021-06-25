@@ -10,10 +10,10 @@ import org.mockito.Mockito
 @ExtendWith(MockitoExtension::class)
 class AnotherServiceTest {
     @InjectMocks
-    private val service: AnotherService? = null
+    private lateinit var service: AnotherService
 
     @Mock
-    private val someService: SomeService? = null
+    private lateinit var someService: SomeService
     @Test
     fun testThrowsOnNonCalculateParameter() {
         val exception = Assertions.assertThrows(DomainException::class.java) { service!!.bar(false) }
